@@ -74,12 +74,14 @@ np = neopixel.NeoPixel(pin16, num_pixels)
 car_count = 0
 car_in_zone = False # High-precision vehicle state lock to prevent duplicate counting
 
+import utime
+
 def get_distance():
     try:
         trig.write_digital(0)
-        sleep_us(2)
+        utime.sleep_us(2)
         trig.write_digital(1)
-        sleep_us(10)
+        utime.sleep_us(10)
         trig.write_digital(0)
         
         import machine
