@@ -110,14 +110,14 @@ while True:
     dist = get_distance()
     
     # --- 2. Vehicle Detection & Anti-Duplicate Counting Logic ---
-    if dist < 8.0:
+    if dist < 20.0:
         if not car_in_zone:
             car_count += 1
             car_in_zone = True
             buzzer.write_digital(1)
             sleep(40)
             buzzer.write_digital(0)
-    elif dist > 12.0:
+    elif dist > 25.0:
         car_in_zone = False
 
     # --- 3. Light Control Logic ---
